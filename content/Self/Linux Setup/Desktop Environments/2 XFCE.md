@@ -1,0 +1,1 @@
+XFCE is lightweight. Not a lot going on. I run it on my pixel 6  ( under termux ) and on most of my servers through vnc. I do not like the implementations of tiling in XFCE that I have seen, but honestly I do not need tiling on either of the listed usecases. XFCE works fine.

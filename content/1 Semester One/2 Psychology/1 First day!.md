@@ -1,0 +1,1 @@
+First day psychology - Did a thing where we were fed incorrect information so we could show people have biases, that was cool. Also did guessing of what a person picked, A B C, to demonstrate the monty hall problem.

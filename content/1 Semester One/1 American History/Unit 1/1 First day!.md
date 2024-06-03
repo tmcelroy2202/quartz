@@ -1,0 +1,1 @@
+Sat next to nora, didnt do learning today, but sitll was a fun class and i think the teacher seems like an OK guy.

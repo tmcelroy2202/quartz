@@ -1,0 +1,1 @@
+![[Drawing 2024-03-01 12.57.42.excalidraw.svg]]

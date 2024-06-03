@@ -1,0 +1,4 @@
+Linux Mint is another good beginner distro. Ubuntu based. Shorter release cycle by far than zorin, so you can just sudo apt update && sudo apt upgrade every once in a while and life will be good for you. There are also a ton more resources on linux mint than there are on zorin, with linux mint being much much more popular than zorin ever will be. It does not have a bunch of the cooler features of zorin ( windows app support, extensive theme customization with ease ) out of the box, but all of those things can be installed if you wish for them. 
+
+Linux Mint is stable. It's still ubuntu based, so it has all the disadvantages of ubuntu, except snaps, it gets rid of snaps. It's pretty nice to use. I run it in some virtual machines to be servers for me when I do not want to think about using purely cli on a server. 
+

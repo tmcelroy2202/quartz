@@ -1,0 +1,30 @@
+Unit 0 Lesson 1 Check for Understanding
+
+Classification of Matter 
+
+Directions: For each sample of matter, determine if it is a substance or a mixture.  If it is a substance, determine whether it is an element or compound.  If it is a mixture, state whether it is homogeneous or heterogeneous.
+
+  
+
+|     | Sample                                                                                                                                                                                            | Pure Substance (C or E) | Mixture  (Ho or He) |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------- | ------------------- |
+| 1.  | Tin (Sn)                                                                                                                                                                                          | element                 |                     |
+| 2.  | salt water                                                                                                                                                                                        |                         | Mixture Ho                     |
+| 3.  | chocolate chip cookie                                                                                                                                                                             |                         | Mixture He                    |
+| 4.  | ![](https://lh7-us.googleusercontent.com/xoIj63PV8RjKNZ4vL0smcuMDE2eFqjIf-gigrqUmNGC6wLcZZuEVpTF6AiIXk6PuGfW_QmlUaQLku4MqinR1slNSUKjdvqcONO7tI-wv3SgEFoZ9632hZkGS7ckZa86qMy-OjKBU5WKvYT7VpmUgas4) | Element                        |                     |
+| 5.  | Water or Ice H2O                                                                                                                                                                                  | Compound                         |                     |
+| 6.  | air                                                                                                                                                                                               |                         | Mixture ( Ho )                    |
+| 7.  | salad dressing                                                                                                                                                                                    |                         | Mixture ( Ho )                    |
+| 8.  | ![](https://lh7-us.googleusercontent.com/zxXZpTRxfwz6r2EHVTNUQJwZMiPgPqBlOWRujuRxe5EsVkXxXWPP52cb0YI2p_LijocSj9h8ur94WG5UYO9Ft8QHKTF20jzYOQE7I9Uw9Iyo-nkA09sV8nrAu82tswJyGLwMZvmIXmK_-ABaSdJfFC4) | Element                        |                     |
+| 9.  | Cl2                                                                                                                                                                                               | Element                        |                     |
+| 10. | Ca                                                                                                                                                                                                | Element                        |                     |
+| 11. | ![](https://lh7-us.googleusercontent.com/XFLrKCuYn13M662UzFotk4nWZ4_YhmqV9K4Y44qpWOYNt95SBYbALS3y69amhzGntc3E3IkeObW3chutpQsUGXuTTw6E_7y3c-y65hmIZwyD8zxA_fXRX3lbz09mczt3UvyHXJ93xEYspeuHewMgK6U) | Compound                        |                     |
+| 12. | sandy water                                                                                                                                                                                       |                         | Mixture Ho                    |
+| 13. | Carbon Dioxide (CO2)                                                                                                                                                                              | Compound                        |                     |
+| 14. | Soil                                                                                                                                                                                              |                         | Mixture He                    |
+| 15. | ![](https://lh7-us.googleusercontent.com/UjzbvjhG9TZS00JBz_Yd7qXU-OxdYp9tQfGtDSpV3SN-9Dzf0y8lYMUAIICq36BMeDKFjpfPxrAo_LskGIDtMMqM95N_ArG7Pa_rGSwjjIXK3nbqJMvr1MMTGOlX7Cf0ZmD1VqdpVcMPIvuoucY4vGg) |                         | Mixture Ho                    |
+| 16. | glucose (C6H12O6)                                                                                                                                                                                 | Compound                        |                     |
+| 17. | ![](https://lh7-us.googleusercontent.com/a0dWKEugvGa8Q1c0XCBbaMlr1bnyi-sZy0FWv7m5nDp22PrrbmF1Z9yaUDW2dtcGyFMVX7c7n2VMCgEEchGofID-wBXx8Fav6DRmrYkwCxztarT6knY8LJ0oRnh94ElqJPSvBmujqvxugplKWMCARoQ) |                         | Mixture He                    |
+| 18. | Rust (Fe2O3)                                                                                                                                                                                      | Compound                        |                     |
+| 19. | rocky road ice cream                                                                                                                                                                              |                         | Mixture Ho                    |
+| 20. | O3                                                                                                                                                                                                | Element                        |                     |

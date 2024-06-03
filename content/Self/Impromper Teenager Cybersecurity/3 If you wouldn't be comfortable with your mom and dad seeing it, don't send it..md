@@ -1,0 +1,7 @@
+The internet is forever. I know that that's a cliche like guidance counselor thing to say, but it is true. If you send nudes to someone, they can screenshot that, and they have that forever. You can't do anything to make them not have that anymore. You break up? They still have that. You can't do anything to stop them from spreading it either. 
+
+This is especially true about posting things, but I would really assume that would be obvious. If you post something, there is no way to truly remove it from the internet. Even if you delete it, it has likely been archived somewhere. Security through obscurity is never the best plan. 
+
+It is also true about messages. Any messages you send, no matter where they are sent, cant always be screenshotted, and it is never safe to assume that they will be kept private. It does not matter what platform it is. Some people seem to believe that things on snapchat are legitimately temporary, but you are one jailbreak tweak away from having your chat screen recorded without it telling you. You are also one ipad camera held to phone screen away from your chat having pictures taken of it. 
+
+You know those tiktoks where people click through on onlyfans ads or tiktoks of teenagers smoking and then they find the people's parents and message them the link to that tiktok? That can happen to you. Do not think it can't.

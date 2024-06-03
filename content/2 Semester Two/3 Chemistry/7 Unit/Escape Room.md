@@ -1,0 +1,1 @@
+![[Escaperoom.excalidraw.svg]]
