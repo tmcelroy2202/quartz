@@ -1,5 +1,5 @@
 - [ ] Linux tools 
-	- [ ] vi / helix keybindings
+	- [x] vi / helix keybindings
 	- [ ] vnc 
 	- [ ] bash
 	- [ ] python scripts 

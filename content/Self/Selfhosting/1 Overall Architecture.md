@@ -1,5 +1,15 @@
 This document is going to list out every service hosted across all my devices. Services that are currently running are marked with a check, services that are down are not. Services that are exposed to the web are marked with a - at the end. if it has no - then it is not exposed to the web in any way.
 
+Here are my bits of documentation on each service im hosting ( that i have written documentation for):
+* [[2 Kasm]]
+* [[3 Quartz]]
+* [[4 Bluebubbles and Beeper]]
+* [[5  VL(M)ess WS TLS]]
+* [[6 Monitoring ( Netdata and Uptime Kuma)]]
+* [[7 Immich]]
+* [[8 Music]]
+* [[9 OpenMediaVault]]
+
 Things that are on this list but not checked off im just not hosting for the moment. They have been hosted before.
 
 # Fancy Gaming Computer ( 2 )
