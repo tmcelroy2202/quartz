@@ -1,0 +1,510 @@
+<p dir="auto">These devices are SUPER CHEAP (secondhand) enterprise grade access points. My goal is to use the 3 of them I got for a wifi roaming network around my house. </p>
+<p dir="auto">by super cheap I mean, you can get 1 for 12$ and 5 for around 36$.<br>
+</p><div src="attachment/Pasted image 20240701202929.png" class="internal-embed" dir="auto"></div><br>
+I find that to be absolutely absurd. <p dir="auto"></p>
+<h1 data-heading="disclaimer" dir="auto">disclaimer</h1>
+<p dir="auto">im not responsible for if you break your access point doing this. That should not happen, but it totally could, if you do something stupid. </p>
+<p dir="auto">They do not have a web interface though, so flashing openwrt to them requires you to buy a cisco serial cable</p>
+<p dir="auto">link to that cable : <a rel="noopener" class="external-link" href="https://www.amazon.com/OIKWAN-Compatible-Opengear-Aruba%EF%BC%8CJuniper-Switches/dp/B075V1RGQK/" target="_blank">https://www.amazon.com/OIKWAN-Compatible-Opengear-Aruba%EF%BC%8CJuniper-Switches/dp/B075V1RGQK/</a></p>
+<p dir="auto">I do not know how to buy their DC power cable, and I do not want to, but they support PoE, so I bought a few PoE injectors on eBay and am using it that way. it is working wonderfully. </p>
+<p dir="auto">Now connect that cisco serial cable to your computer, and to the console port of the access point, and then in a linux terminal, run the following command:</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">sudo</span> picocom -b <span class="token number">115200</span> /dev/ttyUSB0
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">note: /dev/ttyUSB0 was what it was for me. it might be something different for you, especially if you have multiple devices connected.</p>
+<p dir="auto">Now connect your PoE cable to LAN 1 ( NOT LAN 2 LAN 2 WILL BREAK THINGS LATER )</p>
+<p dir="auto">It is going to prompt you for a username and password<br>
+the username is admin<br>
+the password is new2day<br>
+if those do not work, then you need to reset the access point, using the reset button near the cables. I use a bent paperclip for this.</p>
+<p dir="auto">Once you are signed in, you should be at a shell which has the prompt</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">Boot <span class="token punctuation">(</span>PRI<span class="token punctuation">)</span>-<span class="token operator">&gt;</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">if that is NOT the prompt, then you just need to wait for a while, or reboot the access point. You also should try booting the access point AFTER connecting the console cable, as I have seen that when the cable is connected affects which shell you get. </p>
+<p dir="auto">Now you need to run a TFTP server on your computer, to serve up that firmware so we can flash it.</p>
+<p dir="auto">on linux thats:</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token comment"># create a temporary directory and enter it:</span>
+<span class="token builtin class-name">cd</span> <span class="token variable"><span class="token variable">$(</span>mktemp -d<span class="token variable">)</span></span>
+
+<span class="token comment"># dowload the initramfs:</span>
+<span class="token function">curl</span> https://downloads.openwrt.org/snapshots/targets/mpc85xx/p1020/openwrt-mpc85xx-p1020-extreme-networks_ws-ap3825i-initramfs-kernel.bin -o ws-ap3825i-initramfs.bin
+
+<span class="token function">cp</span> ws-ap3825i-initramfs.bin initramfs.bin
+
+<span class="token comment"># start a tftp server which serves from the current location</span>
+<span class="token function">sudo</span> dnsmasq -d --enable-tftp --port <span class="token number">0</span> --tftp-root <span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">Now, in order to communicate with that server, you must run these commands on the boot PRI shell, INDIVIDUALLY. YOU CANNOT COPY THEM ALL IN AT THE SAME TIME.</p>
+<h1 data-heading="important:" dir="auto">important:</h1>
+<p dir="auto">the first ip address is the current IP of the access point itself. The second is the IP of the tftp server. YOU MUST CHANGE THESE. </p>
+<p dir="auto">you must be connected to LAN 1 in order to successfully get an internet connection after. If you are on LAN 2 this will not work. I do not know why. i think it's kinda silly, but it's the truth. </p>
+<p dir="auto">in order for you to have an IP address for the access point, it has to have booted normally atleast once. so do that if you havent already. </p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">setenv ramboot_openwrt <span class="token string">"setenv ipaddr 192.168.2.242; setenv serverip 192.168.2.208; tftpboot 0x2000000 ws-ap3825i-initramfs.bin; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"</span>
+
+setenv boot_openwrt <span class="token string">"cp.b 0xEC000000 0x2000000 0x2000000; interrupts off; bootm start 0x2000000; bootm loados; fdt resize; fdt boardsetup; fdt resize; fdt boardsetup; fdt chosen; fdt resize; fdt chosen; bootm prep; bootm go;"</span>
+
+setenv bootcmd <span class="token string">"run boot_openwrt"</span><span class="token punctuation">;</span>
+
+saveenv
+
+run ramboot_openwrt
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">if all went well, you should now be in openwrt! ( you will have to hit enter to get a shell ) </p>
+<p dir="auto">if at any point, your system breaks, just repeat the commands above in the boot-pri shell.</p>
+<p dir="auto">from here, you are gonna wanna do a system upgrade </p>
+<p dir="auto">I do this via wget </p>
+<p dir="auto">I go to the openwrt wiki page for the device<br>
+<a rel="noopener" class="external-link" href="https://openwrt.org/toh/extreme_networks/ws-ap3825i" target="_blank">https://openwrt.org/toh/extreme_networks/ws-ap3825i</a></p>
+<p dir="auto">and i scroll down to installation<br>
+</p><div src="attachment/Pasted image 20240701142049.png" class="internal-embed" dir="auto"></div><p dir="auto"></p>
+<p dir="auto">i right click on the sysupgrade image link and i copy link. You should do this yourself because there may be a newer version available than the version at time of writing.<br>
+currently thats<br>
+<a rel="noopener" class="external-link" href="https://downloads.openwrt.org/releases/23.05.3/targets/mpc85xx/p1020/openwrt-23.05.3-mpc85xx-p1020-extreme-networks_ws-ap3825i-squashfs-sysupgrade.bin" target="_blank">https://downloads.openwrt.org/releases/23.05.3/targets/mpc85xx/p1020/openwrt-23.05.3-mpc85xx-p1020-extreme-networks_ws-ap3825i-squashfs-sysupgrade.bin</a></p>
+<p dir="auto">then in the openwrt shell i execute</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded"><span class="token function">wget</span> https://downloads.openwrt.org/releases/23.05.3/targets/mpc85xx/p1020/openwrt-23.05.3-mpc85xx-p1020-extreme-networks_ws-ap3825i-squashfs-sysupgrade.bin -O sysupgrade.bin
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">and then </p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">sysupgrade -n sysupgrade.bin
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">you should now be in a updated and mostly functional copy of openwrt!</p>
+<p dir="auto">couple small problems though - primarily that it has no wifi network right now. </p>
+<p dir="auto">all config files are in /etc/config on openwrt.</p>
+<p dir="auto">im now going to show each one</p>
+<p dir="auto">/etc/config/dhcp</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config dnsmasq
+	option domainneeded <span class="token string">'1'</span>
+	option localise_queries <span class="token string">'1'</span>
+	option rebind_protection <span class="token string">'1'</span>
+	option rebind_localhost <span class="token string">'1'</span>
+	option cachesize <span class="token string">'1000'</span>
+	option readethers <span class="token string">'1'</span>
+	option leasefile <span class="token string">'/tmp/dhcp.leases'</span>
+	option resolvfile <span class="token string">'/tmp/resolv.conf.d/resolv.conf.auto'</span>
+	option localservice <span class="token string">'1'</span>
+	option ednspacket_max <span class="token string">'1232'</span>
+	option allservers <span class="token string">'1'</span>
+
+config dhcp <span class="token string">'lan'</span>
+	option interface <span class="token string">'lan'</span>
+	option start <span class="token string">'100'</span>
+	option limit <span class="token string">'150'</span>
+	option leasetime <span class="token string">'12h'</span>
+	option dhcpv4 <span class="token string">'server'</span>
+	option ignore <span class="token string">'1'</span>
+
+config dhcp <span class="token string">'wan'</span>
+	option interface <span class="token string">'wan'</span>
+
+config odhcpd <span class="token string">'odhcpd'</span>
+	option maindhcp <span class="token string">'0'</span>
+	option leasefile <span class="token string">'/tmp/hosts/odhcpd'</span>
+	option leasetrigger <span class="token string">'/usr/sbin/odhcpd-update'</span>
+	option loglevel <span class="token string">'4'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/firewall</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config defaults
+	option input <span class="token string">'ACCEPT'</span>
+	option output <span class="token string">'ACCEPT'</span>
+	option forward <span class="token string">'ACCEPT'</span>
+	option synflood_protect <span class="token string">'1'</span>
+
+config zone
+	option name <span class="token string">'lan'</span>
+	list network <span class="token string">'lan'</span>
+	option input <span class="token string">'ACCEPT'</span>
+	option output <span class="token string">'ACCEPT'</span>
+	option forward <span class="token string">'ACCEPT'</span>
+	option masq <span class="token string">'1'</span>
+
+config zone
+	option name <span class="token string">'wan'</span>
+	list network <span class="token string">'wan'</span>
+	list network <span class="token string">'wan6'</span>
+	option input <span class="token string">'ACCEPT'</span>
+	option output <span class="token string">'ACCEPT'</span>
+	option forward <span class="token string">'ACCEPT'</span>
+	option masq <span class="token string">'1'</span>
+	option mtu_fix <span class="token string">'1'</span>
+
+config forwarding
+	option src <span class="token string">'lan'</span>
+	option dest <span class="token string">'wan'</span>
+
+config rule
+	option name <span class="token string">'Allow-DHCP-Renew'</span>
+	option src <span class="token string">'wan'</span>
+	option proto <span class="token string">'udp'</span>
+	option dest_port <span class="token string">'68'</span>
+	option target <span class="token string">'ACCEPT'</span>
+	option family <span class="token string">'ipv4'</span>
+
+config rule
+	option name <span class="token string">'Allow-Ping'</span>
+	option src <span class="token string">'wan'</span>
+	option proto <span class="token string">'icmp'</span>
+	option icmp_type <span class="token string">'echo-request'</span>
+	option family <span class="token string">'ipv4'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config rule
+	option name <span class="token string">'Allow-IGMP'</span>
+	option src <span class="token string">'wan'</span>
+	option proto <span class="token string">'igmp'</span>
+	option family <span class="token string">'ipv4'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config rule
+	option name <span class="token string">'Allow-DHCPv6'</span>
+	option src <span class="token string">'wan'</span>
+	option proto <span class="token string">'udp'</span>
+	option dest_port <span class="token string">'546'</span>
+	option family <span class="token string">'ipv6'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config rule
+	option name <span class="token string">'Allow-MLD'</span>
+	option src <span class="token string">'wan'</span>
+	option proto <span class="token string">'icmp'</span>
+	option src_ip <span class="token string">'fe80::/10'</span>
+	list icmp_type <span class="token string">'130/0'</span>
+	list icmp_type <span class="token string">'131/0'</span>
+	list icmp_type <span class="token string">'132/0'</span>
+	list icmp_type <span class="token string">'143/0'</span>
+	option family <span class="token string">'ipv6'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config rule
+	option name <span class="token string">'Allow-ICMPv6-Input'</span>
+	option src <span class="token string">'wan'</span>
+	option proto <span class="token string">'icmp'</span>
+	list icmp_type <span class="token string">'echo-request'</span>
+	list icmp_type <span class="token string">'echo-reply'</span>
+	list icmp_type <span class="token string">'destination-unreachable'</span>
+	list icmp_type <span class="token string">'packet-too-big'</span>
+	list icmp_type <span class="token string">'time-exceeded'</span>
+	list icmp_type <span class="token string">'bad-header'</span>
+	list icmp_type <span class="token string">'unknown-header-type'</span>
+	list icmp_type <span class="token string">'router-solicitation'</span>
+	list icmp_type <span class="token string">'neighbour-solicitation'</span>
+	list icmp_type <span class="token string">'router-advertisement'</span>
+	list icmp_type <span class="token string">'neighbour-advertisement'</span>
+	option limit <span class="token string">'1000/sec'</span>
+	option family <span class="token string">'ipv6'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config rule
+	option name <span class="token string">'Allow-ICMPv6-Forward'</span>
+	option src <span class="token string">'wan'</span>
+	option dest <span class="token string">'*'</span>
+	option proto <span class="token string">'icmp'</span>
+	list icmp_type <span class="token string">'echo-request'</span>
+	list icmp_type <span class="token string">'echo-reply'</span>
+	list icmp_type <span class="token string">'destination-unreachable'</span>
+	list icmp_type <span class="token string">'packet-too-big'</span>
+	list icmp_type <span class="token string">'time-exceeded'</span>
+	list icmp_type <span class="token string">'bad-header'</span>
+	list icmp_type <span class="token string">'unknown-header-type'</span>
+	option limit <span class="token string">'1000/sec'</span>
+	option family <span class="token string">'ipv6'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config rule
+	option name <span class="token string">'Allow-IPSec-ESP'</span>
+	option src <span class="token string">'wan'</span>
+	option dest <span class="token string">'lan'</span>
+	option proto <span class="token string">'esp'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config rule
+	option name <span class="token string">'Allow-ISAKMP'</span>
+	option src <span class="token string">'wan'</span>
+	option dest <span class="token string">'lan'</span>
+	option dest_port <span class="token string">'500'</span>
+	option proto <span class="token string">'udp'</span>
+	option target <span class="token string">'ACCEPT'</span>
+
+config forwarding
+	option src <span class="token string">'wan'</span>
+	option dest <span class="token string">'lan'</span>
+
+config rule
+	option name <span class="token string">'Allow-Admin'</span>
+	option enabled <span class="token string">'true'</span>
+	option src <span class="token string">'wan'</span>
+	option proto <span class="token string">'tcp'</span>
+	option dest_port <span class="token string">'22 80 443'</span>
+	option target <span class="token string">'ACCEPT'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/network</p>
+<h1 data-heading="with this one be aware you must set the IP you want it to have and the gateway you want it to have." dir="auto">with this one be aware you must set the IP you want it to have and the gateway you want it to have.</h1>
+<p dir="auto">your gateway is your upstream router ip. </p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config interface <span class="token string">'loopback'</span>
+	option device <span class="token string">'lo'</span>
+	option proto <span class="token string">'static'</span>
+	option ipaddr <span class="token string">'127.0.0.1'</span>
+	option netmask <span class="token string">'255.0.0.0'</span>
+
+config globals <span class="token string">'globals'</span>
+	option ula_prefix <span class="token string">'fd28:8846:f519::/48'</span>
+
+config device
+	option name <span class="token string">'br-lan'</span>
+	option <span class="token builtin class-name">type</span> <span class="token string">'bridge'</span>
+	list ports <span class="token string">'eth1'</span>
+
+config interface <span class="token string">'lan'</span>
+	option proto <span class="token string">'static'</span>
+	option ipaddr <span class="token string">'192.168.2.2'</span>
+	option netmask <span class="token string">'255.255.255.0'</span>
+	option gateway <span class="token string">'192.168.2.1'</span>
+	option device <span class="token string">'br-lan'</span>
+	list dns <span class="token string">'192.168.2.1'</span>
+
+config interface <span class="token string">'wan'</span>
+	option device <span class="token string">'eth1'</span>
+	option proto <span class="token string">'dhcp'</span>
+
+config interface <span class="token string">'wan6'</span>
+	option device <span class="token string">'eth1'</span>
+	option proto <span class="token string">'dhcpv6'</span>
+	option reqaddress <span class="token string">'try'</span>
+	option reqprefix <span class="token string">'auto'</span>
+
+config device
+	option name <span class="token string">'br-lan'</span>
+	option <span class="token builtin class-name">type</span> <span class="token string">'bridge'</span>
+	list ports <span class="token string">'eth1'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/system</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config system
+	option <span class="token function">hostname</span> <span class="token string">'OpenWrt'</span>
+	option timezone <span class="token string">'UTC'</span>
+	option ttylogin <span class="token string">'0'</span>
+	option log_size <span class="token string">'64'</span>
+	option urandom_seed <span class="token string">'0'</span>
+
+config timeserver <span class="token string">'ntp'</span>
+	option enable_server <span class="token string">'0'</span>
+	list server <span class="token string">'0.openwrt.pool.ntp.org'</span>
+	list server <span class="token string">'1.openwrt.pool.ntp.org'</span>
+	list server <span class="token string">'2.openwrt.pool.ntp.org'</span>
+	list server <span class="token string">'3.openwrt.pool.ntp.org'</span>
+
+config led <span class="token string">'led_lan1'</span>
+	option name <span class="token string">'LAN1'</span>
+	option sysfs <span class="token string">'green:lan1'</span>
+	option trigger <span class="token string">'netdev'</span>
+	option mode <span class="token string">'link tx rx'</span>
+	option dev <span class="token string">'eth1'</span>
+
+config led <span class="token string">'led_lan2'</span>
+	option name <span class="token string">'LAN2'</span>
+	option sysfs <span class="token string">'green:lan2'</span>
+	option trigger <span class="token string">'netdev'</span>
+	option mode <span class="token string">'link tx rx'</span>
+	option dev <span class="token string">'eth1'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/ucitrack</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config network
+	option init network
+	list affects dhcp
+
+config wireless
+	list affects network
+
+config firewall
+	option init firewall
+	list affects luci-splash
+	list affects qos
+	list affects miniupnpd
+
+config olsr
+	option init olsrd
+
+config dhcp
+	option init dnsmasq
+	list affects odhcpd
+
+config odhcpd
+	option init odhcpd
+
+config dropbear
+	option init dropbear
+
+config httpd
+	option init httpd
+
+config fstab
+	option <span class="token builtin class-name">exec</span> <span class="token string">'/sbin/block mount'</span>
+
+config qos
+	option init qos
+
+config system
+	option init led
+	option <span class="token builtin class-name">exec</span> <span class="token string">'/etc/init.d/log reload'</span>
+	list affects luci_statistics
+	list affects dhcp
+
+config luci_splash
+	option init luci_splash
+
+config upnpd
+	option init miniupnpd
+
+config ntpclient
+	option init ntpclient
+
+config samba
+	option init samba
+
+config tinyproxy
+	option init tinyproxy
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/wireless</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config wifi-device <span class="token string">'radio0'</span>
+	option <span class="token builtin class-name">type</span> <span class="token string">'mac80211'</span>
+	option path <span class="token string">'ffe0a000.pcie/pcia000:02/a000:02:00.0/a000:03:00.0'</span>
+	option channel <span class="token string">'36'</span>
+	option band <span class="token string">'5g'</span>
+	option htmode <span class="token string">'VHT80'</span>
+	option disabled <span class="token string">'0'</span>
+
+config wifi-iface <span class="token string">'default_radio0'</span>
+	option device <span class="token string">'radio0'</span>
+	option network <span class="token string">'lan'</span>
+	option mode <span class="token string">'ap'</span>
+	option ssid <span class="token string">'OpenWrt'</span>
+	option encryption <span class="token string">'none'</span>
+
+config wifi-device <span class="token string">'radio1'</span>
+	option <span class="token builtin class-name">type</span> <span class="token string">'mac80211'</span>
+	option path <span class="token string">'ffe09000.pcie/pci9000:00/9000:00:00.0/9000:01:00.0'</span>
+	option channel <span class="token string">'36'</span>
+	option band <span class="token string">'5g'</span>
+	option htmode <span class="token string">'HT20'</span>
+	option disabled <span class="token string">'0'</span>
+
+config wifi-iface <span class="token string">'default_radio1'</span>
+	option device <span class="token string">'radio1'</span>
+	option network <span class="token string">'lan'</span>
+	option mode <span class="token string">'ap'</span>
+	option ssid <span class="token string">'OpenWrt'</span>
+	option encryption <span class="token string">'none'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/dropbear</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config dropbear
+	option PasswordAuth <span class="token string">'on'</span>
+	option RootPasswordAuth <span class="token string">'on'</span>
+	option Port         <span class="token string">'22'</span>
+<span class="token comment">#	option BannerFile   '/etc/banner'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/luci</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config core <span class="token string">'main'</span>
+	option lang <span class="token string">'auto'</span>
+	option mediaurlbase <span class="token string">'/luci-static/bootstrap'</span>
+	option resourcebase <span class="token string">'/luci-static/resources'</span>
+	option ubuspath <span class="token string">'/ubus/'</span>
+
+config extern <span class="token string">'flash_keep'</span>
+	option uci <span class="token string">'/etc/config/'</span>
+	option dropbear <span class="token string">'/etc/dropbear/'</span>
+	option openvpn <span class="token string">'/etc/openvpn/'</span>
+	option <span class="token function">passwd</span> <span class="token string">'/etc/passwd'</span>
+	option opkg <span class="token string">'/etc/opkg.conf'</span>
+	option firewall <span class="token string">'/etc/firewall.user'</span>
+	option uploads <span class="token string">'/lib/uci/upload/'</span>
+
+config internal <span class="token string">'languages'</span>
+
+config internal <span class="token string">'sauth'</span>
+	option sessionpath <span class="token string">'/tmp/luci-sessions'</span>
+	option sessiontime <span class="token string">'3600'</span>
+
+config internal <span class="token string">'ccache'</span>
+	option <span class="token builtin class-name">enable</span> <span class="token string">'1'</span>
+
+config internal <span class="token string">'themes'</span>
+	option Bootstrap <span class="token string">'/luci-static/bootstrap'</span>
+	option BootstrapDark <span class="token string">'/luci-static/bootstrap-dark'</span>
+	option BootstrapLight <span class="token string">'/luci-static/bootstrap-light'</span>
+
+config internal <span class="token string">'apply'</span>
+	option rollback <span class="token string">'90'</span>
+	option holdoff <span class="token string">'4'</span>
+	option <span class="token function">timeout</span> <span class="token string">'5'</span>
+	option display <span class="token string">'1.5'</span>
+
+config internal <span class="token string">'diag'</span>
+	option dns <span class="token string">'openwrt.org'</span>
+	option <span class="token function">ping</span> <span class="token string">'openwrt.org'</span>
+	option route <span class="token string">'openwrt.org'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/rpcd</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config rpcd
+	option socket /var/run/ubus/ubus.sock
+	option <span class="token function">timeout</span> <span class="token number">30</span>
+
+config login
+	option username <span class="token string">'root'</span>
+	option password <span class="token string">'$p$root'</span>
+	list <span class="token builtin class-name">read</span> <span class="token string">'*'</span>
+	list <span class="token function">write</span> <span class="token string">'*'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/ubootenv</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config ubootenv
+	option dev <span class="token string">'/dev/mtdblock8'</span>
+	option offset <span class="token string">'0x0'</span>
+	option envsize <span class="token string">'0x10000'</span>
+	option secsize <span class="token string">'0x20000'</span>
+
+config ubootenv
+	option dev <span class="token string">'/dev/mtdblock7'</span>
+	option offset <span class="token string">'0x0'</span>
+	option envsize <span class="token string">'0x10000'</span>
+	option secsize <span class="token string">'0x20000'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">/etc/config/uhttpd</p>
+<pre dir="auto" class="language-bash" tabindex="0"><code class="language-bash is-loaded">config uhttpd <span class="token string">'main'</span>
+	list listen_http <span class="token string">'0.0.0.0:80'</span>
+	list listen_http <span class="token string">'[::]:80'</span>
+	list listen_https <span class="token string">'0.0.0.0:443'</span>
+	list listen_https <span class="token string">'[::]:443'</span>
+	option redirect_https <span class="token string">'0'</span>
+	option home <span class="token string">'/www'</span>
+	option rfc1918_filter <span class="token string">'1'</span>
+	option max_requests <span class="token string">'3'</span>
+	option max_connections <span class="token string">'100'</span>
+	option cert <span class="token string">'/etc/uhttpd.crt'</span>
+	option key <span class="token string">'/etc/uhttpd.key'</span>
+	option cgi_prefix <span class="token string">'/cgi-bin'</span>
+	list lua_prefix <span class="token string">'/cgi-bin/luci=/usr/lib/lua/luci/sgi/uhttpd.lua'</span>
+	option script_timeout <span class="token string">'60'</span>
+	option network_timeout <span class="token string">'30'</span>
+	option http_keepalive <span class="token string">'20'</span>
+	option tcp_keepalive <span class="token string">'1'</span>
+	option ubus_prefix <span class="token string">'/ubus'</span>
+
+config cert <span class="token string">'defaults'</span>
+	option days <span class="token string">'730'</span>
+	option key_type <span class="token string">'ec'</span>
+	option bits <span class="token string">'2048'</span>
+	option ec_curve <span class="token string">'P-256'</span>
+	option country <span class="token string">'ZZ'</span>
+	option state <span class="token string">'Somewhere'</span>
+	option location <span class="token string">'Unknown'</span>
+	option commonname <span class="token string">'OpenWrt'</span>
+</code><button class="copy-code-button">Copy</button></pre>
+<p dir="auto">once you make all those files say all those things, reboot. wifi should just work immediately.</p>
+<p dir="auto">Great! so now we have a working openwrt access point!</p>
+<p dir="auto">its an open network though, which isnt great. Let's fix that. </p>
+<p dir="auto">on each access point, on luci, go to network -&gt; wireless<br>
+where you see your SSIDs, click Edit </p>
+<p dir="auto"></p><div src="attachment/Pasted image 20240701162124.png" class="internal-embed" dir="auto"></div><p dir="auto"></p>
+<p dir="auto">under interface configuration go to the wireless security tab </p>
+<p dir="auto">set encryption to WPA2-PSK</p>
+<p dir="auto"></p><div src="attachment/Pasted image 20240701162226.png" class="internal-embed" dir="auto"></div><p dir="auto"></p>
+<p dir="auto">set Key to your password. Key just means password.  dont worry about any of the other options. Save. Do this on each SSID on each access point. </p>
+<p dir="auto">Useful resources for this topic:</p>
+<p dir="auto"><a rel="noopener" class="external-link" href="https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923" target="_blank">https://forum.darmstadt.freifunk.net/t/flashing-of-the-extreme-networks-ws-ap3825i/923</a></p>
+<p dir="auto"><a rel="noopener" class="external-link" href="https://openwrt.org/toh/extreme_networks/ws-ap3825i" target="_blank">https://openwrt.org/toh/extreme_networks/ws-ap3825i</a></p>
+<p dir="auto"><a rel="noopener" class="external-link" href="https://openwrt.org/docs/guide-user/network/wifi/wifiextenders/bridgedap" target="_blank">https://openwrt.org/docs/guide-user/network/wifi/wifiextenders/bridgedap</a></p>

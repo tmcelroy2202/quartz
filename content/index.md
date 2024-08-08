@@ -1,5 +1,4 @@
 # My Notes!
-
 Im hosting this off of a server in my home - just an old hp desktop running [debian](https://www.debian.org/distrib/) server. It is an instance of [quartz](https://github.com/jackyzha0/quartz).
 
 I use another server ( my more powerful gaming desktop ) for editing the notes. It also runs an instance of quartz ( located [here](https://notes.gamingjones.gay) ), with its content folder ( where all the notes are stored ) linked to the Notes folder in the persistent storage of my ubuntu [Kasm Workspaces](https://www.kasmweb.com/images) instance. 

@@ -62,7 +62,7 @@ Tortilla:
 * https://www.walmart.com/ip/Great-Value-Large-Burrito-Flour-Tortillas-8-Count/250773760?wl13=1464&selectedSellerId=0&wmlspartner=wlpa ( dont see size, but its an 8 count for 2.08$, )
 * https://www.walmart.com/ip/CHI-CHI-S-Flour-Tortillas-Burrito-Size-Tortilla-Wrap-Shelf-Stable-17-oz-Resealable-Package-8-Tortillas/10292254?from=/search ( specifically advertised as burrito size )
 * https://www.samsclub.com/p/mission-large-burrito-size-flour-tortillas/162404?xid=pdp_carousel_rich-relevance.substitutions_1 ( 40 ct, 8.49, advertised as burrito size, and the only comment i could find was mad that they werent 14". I think ill probably live. 22 cents per burrito. ) ( THIS IS SAMS CLUB AND I DO NOT KNOW IF WE HAVE A MEMBERSHIP. If we do, then its super cheap and worth buying, but like, why do we have a sams club membership ?? if we dont, then its not worth paying for a sams club membership.)
-* https://www.target.com/p/10-34-flour-tortillas-8ct-market-pantry-8482/-/A-81858075#lnk=sametab ( 10" burrito 4ct, 2.29, )
+* https://www.target.com/p/10-34-flour-tortillas-8ct-market-pantry-8482/-/A-81858075#lnk=sametab ( 10" burrito 8ct, 2.29, )
 
 
 * Chicken Burritos

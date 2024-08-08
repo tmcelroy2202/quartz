@@ -1,4 +1,4 @@
-There are a number of cool things about firefox which make it beat the competition, but they are primarily built by addons to firefox, not the browser itself. If firefox did not have addon support, there is no way I would ever use it.
+There are a number of cool things about firefox which make it beat the competition, but they are primarily addons to firefox built by the community, not the browser itself. If firefox did not have addon support, there is no way I would ever use it.
 
 Here are my favorite addons:
 1. [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader/?utm_content=addons-manager-reviews-link&utm_medium=firefox-browser&utm_source=firefox-browser)
@@ -55,7 +55,7 @@ There are a number of firefox forks you could ask me to use, but honestly, i hav
 
 Alright, so now that we have covered why I use firefox, now we will cover what each of those extensions do:
 
-Dark reader converts every webpage i go to into a drak mode version of that same webpage. It is very very configurable andit allows me to build my own themes for websites without modifying css myself.
+Dark reader converts every webpage i go to into a drak mode version of that same webpage. It is very very configurable and it allows me to build my own themes for websites without modifying css myself.
 
 canvas with dark reader:
 ![[Pasted image 20240418230645.png]]

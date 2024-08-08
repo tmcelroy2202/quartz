@@ -81,12 +81,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 {
 	"type": "excalidraw",
 	"version": 2,
-	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.0.23",
+	"source": "https://github.com/zsviczian/obsidian-excalidraw-plugin/releases/tag/2.1.8",
 	"elements": [
 		{
 			"type": "ellipse",
-			"version": 73,
-			"versionNonce": 336989584,
+			"version": 74,
+			"versionNonce": 1954983389,
+			"index": "a0",
 			"isDeleted": false,
 			"id": "1NYufusLmCYhsfAqtD6D9",
 			"fillStyle": "solid",
@@ -108,14 +109,15 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710034029192,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 59,
-			"versionNonce": 22831984,
+			"version": 60,
+			"versionNonce": 2129226355,
+			"index": "a1",
 			"isDeleted": false,
 			"id": "Le177DgR",
 			"fillStyle": "solid",
@@ -135,7 +137,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1710034023722,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -146,13 +148,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "your booted copy of windows ",
-			"lineHeight": 1.25,
-			"baseline": 17
+			"lineHeight": 1.25
 		},
 		{
 			"type": "ellipse",
-			"version": 305,
-			"versionNonce": 987509104,
+			"version": 306,
+			"versionNonce": 1317988925,
+			"index": "a2",
 			"isDeleted": false,
 			"id": "gf-afg71gMWBWPfF-CWdl",
 			"fillStyle": "solid",
@@ -183,14 +185,15 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 					"type": "arrow"
 				}
 			],
-			"updated": 1710034193805,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false
 		},
 		{
 			"type": "text",
-			"version": 282,
-			"versionNonce": 355763056,
+			"version": 283,
+			"versionNonce": 1440326675,
+			"index": "a3",
 			"isDeleted": false,
 			"id": "xZvUsR4i",
 			"fillStyle": "solid",
@@ -210,7 +213,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1710034193805,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -221,13 +224,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "middle",
 			"containerId": "gf-afg71gMWBWPfF-CWdl",
 			"originalText": "a linux virtual machine running underneath windows, given some unchanging amount of the windows machine's resources.",
-			"lineHeight": 1.25,
-			"baseline": 217
+			"lineHeight": 1.25
 		},
 		{
 			"type": "text",
-			"version": 274,
-			"versionNonce": 628179856,
+			"version": 275,
+			"versionNonce": 1225824925,
+			"index": "a4",
 			"isDeleted": false,
 			"id": "3m35924Z",
 			"fillStyle": "solid",
@@ -247,7 +250,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1710034133324,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"fontSize": 24.743405948627533,
@@ -258,13 +261,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "all the rest of your windows\n processes, so:\n    * games\n    * browsers\n    * etc ",
-			"lineHeight": 1.25,
-			"baseline": 145
+			"lineHeight": 1.25
 		},
 		{
 			"type": "text",
-			"version": 794,
-			"versionNonce": 517160336,
+			"version": 795,
+			"versionNonce": 30517683,
+			"index": "a5",
 			"isDeleted": false,
 			"id": "a66k8a5L",
 			"fillStyle": "solid",
@@ -289,7 +292,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 					"type": "arrow"
 				}
 			],
-			"updated": 1710034284748,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"fontSize": 29.563415527343764,
@@ -300,13 +303,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "at any time, you can just\nshut down that linux virtual\nmachine, to reclaim the resources\nyou have given to it.\n\nthat linux circle would disappear, \nand your games would have that space back.\n\nthat linux circle would not take up as\nmuch space as i have drawn it to take up, \natleast not when idling.\n\nwith an active kasm workspaces session running\n( so you are on kasm workspaces on your chromebook\ndoing something ) it might.\n",
-			"lineHeight": 1.25,
-			"baseline": 579
+			"lineHeight": 1.25
 		},
 		{
 			"type": "arrow",
-			"version": 1165,
-			"versionNonce": 1779793776,
+			"version": 1168,
+			"versionNonce": 1040608669,
+			"index": "a6",
 			"isDeleted": false,
 			"id": "MPySaPYzSeHGWFB2PUloy",
 			"fillStyle": "solid",
@@ -315,12 +318,12 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"roughness": 1,
 			"opacity": 100,
 			"angle": 0,
-			"x": 223.54626461265912,
-			"y": -196.466849669078,
+			"x": 223.54646826440194,
+			"y": -196.466446447149,
 			"strokeColor": "#1e1e1e",
 			"backgroundColor": "transparent",
-			"width": 105.34026518016083,
-			"height": 13.364927612652991,
+			"width": 105.34006152841795,
+			"height": 13.365041100868524,
 			"seed": 1099623824,
 			"groupIds": [],
 			"frameId": null,
@@ -328,7 +331,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710046106029,
+			"updated": 1722306543073,
 			"link": null,
 			"locked": false,
 			"startBinding": {
@@ -350,15 +353,16 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 					0
 				],
 				[
-					105.34026518016083,
-					-13.364927612652991
+					105.34006152841795,
+					-13.365041100868524
 				]
 			]
 		},
 		{
 			"type": "text",
-			"version": 57,
-			"versionNonce": 1303138160,
+			"version": 58,
+			"versionNonce": 670563155,
+			"index": "a7",
 			"isDeleted": false,
 			"id": "YXnlO0tR",
 			"fillStyle": "solid",
@@ -378,7 +382,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1710035836972,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"fontSize": 182.5779506138393,
@@ -389,13 +393,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "yay -S brave-bin ",
-			"lineHeight": 1.25,
-			"baseline": 161
+			"lineHeight": 1.25
 		},
 		{
 			"type": "line",
-			"version": 41,
-			"versionNonce": 326283632,
+			"version": 42,
+			"versionNonce": 1880512349,
+			"index": "a8",
 			"isDeleted": false,
 			"id": "NPQsMK4jUs1LbQPO7Bv1n",
 			"fillStyle": "solid",
@@ -417,7 +421,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710035840418,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -438,8 +442,9 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 		},
 		{
 			"type": "arrow",
-			"version": 559,
-			"versionNonce": 717183344,
+			"version": 597,
+			"versionNonce": 1159866269,
+			"index": "a9",
 			"isDeleted": false,
 			"id": "dKHuZLKnwDWvm57tKIhF0",
 			"fillStyle": "solid",
@@ -461,7 +466,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710036038589,
+			"updated": 1722306581578,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -486,8 +491,9 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 		},
 		{
 			"type": "text",
-			"version": 1453,
-			"versionNonce": 780781424,
+			"version": 1487,
+			"versionNonce": 1206896403,
+			"index": "aA",
 			"isDeleted": false,
 			"id": "lIYCkWul",
 			"fillStyle": "solid",
@@ -512,7 +518,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 					"type": "arrow"
 				}
 			],
-			"updated": 1710036038587,
+			"updated": 1722306581576,
 			"link": null,
 			"locked": false,
 			"fontSize": 22.78208705357144,
@@ -523,13 +529,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "yay is a package manager, and also an aur helper.\nthe AUR ( Arch User Repository ) is a massive database of what are effectively \nscripts people have made to install programs. It is specific to arch ( the linux distro im using ) \nand it is very convenient, because it allows for me to install programs that have not been \nofficially built for my linux distro and included in my package manager, as users can build them themeslves, \nand include the package in the aur.\n\na package manager is a program which manages your other programs, so on windows\nthis is the settings app or the microsoft store, and on linux, its usually a cli tool,\nthough there are plenty of gui package managers if you need one. \npackage managers search through a database of packages that they receive\nfrom a list of sources, and then install whichever ones you ask them to.\nthey also manage your currently installed packages, so if i wanna uninstall something, \ni would do it through yay aswell.",
-			"lineHeight": 1.25,
-			"baseline": 390
+			"lineHeight": 1.25
 		},
 		{
 			"type": "arrow",
-			"version": 35,
-			"versionNonce": 581050256,
+			"version": 36,
+			"versionNonce": 89752211,
+			"index": "aB",
 			"isDeleted": false,
 			"id": "2jtbNROK_gOqnrg67DIvH",
 			"fillStyle": "solid",
@@ -551,7 +557,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710036044769,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -572,8 +578,9 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 		},
 		{
 			"type": "text",
-			"version": 113,
-			"versionNonce": 1119582064,
+			"version": 114,
+			"versionNonce": 954459165,
+			"index": "aC",
 			"isDeleted": false,
 			"id": "PMjVKsjp",
 			"fillStyle": "solid",
@@ -593,7 +600,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1710036058444,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -604,13 +611,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "-S means sync. it is Syncing whatever\npackage i specify onto my system. ",
-			"lineHeight": 1.25,
-			"baseline": 42
+			"lineHeight": 1.25
 		},
 		{
 			"type": "arrow",
-			"version": 44,
-			"versionNonce": 1009180560,
+			"version": 45,
+			"versionNonce": 584169523,
+			"index": "aD",
 			"isDeleted": false,
 			"id": "VpQLiEoFjGy7QVrJJB4Am",
 			"fillStyle": "solid",
@@ -632,7 +639,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710036061406,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -653,8 +660,9 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 		},
 		{
 			"type": "text",
-			"version": 1155,
-			"versionNonce": 2084539792,
+			"version": 1156,
+			"versionNonce": 1986746493,
+			"index": "aE",
 			"isDeleted": false,
 			"id": "qXpNuDmt",
 			"fillStyle": "solid",
@@ -674,7 +682,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"frameId": null,
 			"roundness": null,
 			"boundElements": [],
-			"updated": 1710036366282,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"fontSize": 20,
@@ -685,13 +693,13 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"verticalAlign": "top",
 			"containerId": null,
 			"originalText": "the name of the package i want to sync.\nbrave, meaning the brave browser, and bin, meaning binary.\n\nthink of this like:\nwhen i download brave-bin, im downloading an exe of brave \ndirectly.\n\nif i try to download brave, im downloading the code of brave, and using that\ncode to compile to an exe. \n\n\nwhen it gets a package name, it takes that package name, and searches\nthe aur for that package - https://aur.archlinux.org/\n\nit also searches the arch official repositories\nfor the package  - https://wiki.archlinux.org/title/Official_repositories\n\nwhichever it finds a package named the same thing as what you want on,\nit installs from, after prompting you to make sure thats right. ",
-			"lineHeight": 1.25,
-			"baseline": 467
+			"lineHeight": 1.25
 		},
 		{
 			"type": "line",
-			"version": 29,
-			"versionNonce": 1786240880,
+			"version": 30,
+			"versionNonce": 2062694867,
+			"index": "aF",
 			"isDeleted": false,
 			"id": "5qiOk1Fu_8S9KMPn9D7Ld",
 			"fillStyle": "solid",
@@ -713,7 +721,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710036181244,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -734,8 +742,9 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 		},
 		{
 			"type": "line",
-			"version": 53,
-			"versionNonce": 2145675152,
+			"version": 54,
+			"versionNonce": 264585437,
+			"index": "aG",
 			"isDeleted": false,
 			"id": "sMPC14SkzJAteIrZMKj6l",
 			"fillStyle": "solid",
@@ -757,7 +766,7 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 				"type": 2
 			},
 			"boundElements": [],
-			"updated": 1710036184797,
+			"updated": 1722306542955,
 			"link": null,
 			"locked": false,
 			"startBinding": null,
@@ -777,143 +786,11 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			]
 		},
 		{
-			"id": "TVbZn7iT8iUBiOyCUuPUh",
-			"type": "line",
-			"x": -78.84219900128096,
-			"y": 1445.5313020777648,
-			"width": 6.085784912109375,
-			"height": 170.40261840820312,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
-			"seed": 1694014320,
-			"version": 22,
-			"versionNonce": 597975440,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1710046162185,
-			"link": null,
-			"locked": false,
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					-6.085784912109375,
-					170.40261840820312
-				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": null
-		},
-		{
-			"id": "lu7wM74dgXF7gN8Rmk5v7",
-			"type": "line",
-			"x": -79.60291067120284,
-			"y": 1538.3398347926086,
-			"width": 451.8711242675781,
-			"height": 6.0858154296875,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
-			"seed": 245929328,
-			"version": 35,
-			"versionNonce": 544751472,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1710046162185,
-			"link": null,
-			"locked": false,
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					451.8711242675781,
-					6.0858154296875
-				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": null
-		},
-		{
-			"id": "dXMDl4ovputLbnMDlnpda",
-			"type": "line",
-			"x": 372.26815256121904,
-			"y": 1633.4305635523742,
-			"width": 5.3250732421875,
-			"height": 182.57418823242188,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
-			"seed": 1352774544,
-			"version": 78,
-			"versionNonce": 1908518800,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1710046162185,
-			"link": null,
-			"locked": false,
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					5.3250732421875,
-					-182.57418823242188
-				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": null
-		},
-		{
-			"id": "uvr9XSnZ",
+			"id": "Eh7pOCYu",
 			"type": "text",
-			"x": 403.2685798073128,
-			"y": 1520.782309157843,
-			"width": 80.97990417480469,
+			"x": 1591.6950883782765,
+			"y": 1354.8751044676912,
+			"width": 9.999984741210938,
 			"height": 25,
 			"angle": 0,
 			"strokeColor": "#1e1e1e",
@@ -925,142 +802,24 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"opacity": 100,
 			"groupIds": [],
 			"frameId": null,
+			"index": "aH",
 			"roundness": null,
-			"seed": 49911664,
-			"version": 16,
-			"versionNonce": 1209979248,
+			"seed": 1172665661,
+			"version": 3,
+			"versionNonce": 841812477,
 			"isDeleted": true,
 			"boundElements": null,
-			"updated": 1710046162185,
+			"updated": 1722306622690,
 			"link": null,
 			"locked": false,
-			"text": "Straight",
-			"rawText": "Straight",
+			"text": "",
+			"rawText": "",
 			"fontSize": 20,
 			"fontFamily": 1,
 			"textAlign": "left",
 			"verticalAlign": "top",
-			"baseline": 17,
 			"containerId": null,
-			"originalText": "Straight",
-			"lineHeight": 1.25
-		},
-		{
-			"id": "yYOUIusc",
-			"type": "text",
-			"x": -186.7314201926872,
-			"y": 1499.782309157843,
-			"width": 76.33990478515625,
-			"height": 25,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"seed": 153167216,
-			"version": 9,
-			"versionNonce": 1795505552,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1710046162185,
-			"link": null,
-			"locked": false,
-			"text": "asexual",
-			"rawText": "asexual",
-			"fontSize": 20,
-			"fontFamily": 1,
-			"textAlign": "left",
-			"verticalAlign": "top",
-			"baseline": 17,
-			"containerId": null,
-			"originalText": "asexual",
-			"lineHeight": 1.25
-		},
-		{
-			"id": "7tH0QtXIxVV134eMpPlL3",
-			"type": "line",
-			"x": 16.24849924090654,
-			"y": 1615.1731172633117,
-			"width": 1.521484375,
-			"height": 130.84478759765625,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": {
-				"type": 2
-			},
-			"seed": 260695952,
-			"version": 27,
-			"versionNonce": 555950960,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1710046162186,
-			"link": null,
-			"locked": false,
-			"points": [
-				[
-					0,
-					0
-				],
-				[
-					1.521484375,
-					-130.84478759765625
-				]
-			],
-			"lastCommittedPoint": null,
-			"startBinding": null,
-			"endBinding": null,
-			"startArrowhead": null,
-			"endArrowhead": null
-		},
-		{
-			"id": "KMBcjU9S",
-			"type": "text",
-			"x": -26.73142019268721,
-			"y": 1450.782309157843,
-			"width": 103.01988220214844,
-			"height": 25,
-			"angle": 0,
-			"strokeColor": "#1e1e1e",
-			"backgroundColor": "transparent",
-			"fillStyle": "solid",
-			"strokeWidth": 2,
-			"strokeStyle": "solid",
-			"roughness": 1,
-			"opacity": 100,
-			"groupIds": [],
-			"frameId": null,
-			"roundness": null,
-			"seed": 313077104,
-			"version": 16,
-			"versionNonce": 1353124752,
-			"isDeleted": true,
-			"boundElements": null,
-			"updated": 1710046162186,
-			"link": null,
-			"locked": false,
-			"text": "were here ",
-			"rawText": "were here ",
-			"fontSize": 20,
-			"fontFamily": 1,
-			"textAlign": "left",
-			"verticalAlign": "top",
-			"baseline": 17,
-			"containerId": null,
-			"originalText": "were here ",
+			"originalText": "",
 			"lineHeight": 1.25
 		}
 	],
@@ -1079,10 +838,10 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 		"currentItemTextAlign": "left",
 		"currentItemStartArrowhead": null,
 		"currentItemEndArrowhead": "arrow",
-		"scrollX": 304.74207082745284,
-		"scrollY": -1115.6853777003234,
+		"scrollX": 790.2721979062884,
+		"scrollY": -267.26428691120645,
 		"zoom": {
-			"value": 1
+			"value": 0.5495859166026429
 		},
 		"currentItemRoundness": "round",
 		"gridSize": null,
@@ -1097,7 +856,8 @@ it installs from, after prompting you to make sure thats right.  ^qXpNuDmt
 			"clip": true,
 			"name": true,
 			"outline": true
-		}
+		},
+		"objectsSnapModeEnabled": false
 	},
 	"files": {}
 }

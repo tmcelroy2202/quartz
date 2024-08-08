@@ -65,6 +65,7 @@ gh auth setup-git
 this may not be necessary, im not sure if gh auth login does this for you, but it cant hurt to run anyway. this should set your git to use your github credentials to push. 
 
 now you're gonna want to make a new repository, which can be done by going to github, picking a name, and clicking the big green create a new repository button.
+
 ![[Pasted image 20240308000506.png]]
 once you have made that repository, it will give you a string of commands you are gonna need for that initial push of a folder to that repository. 
 
