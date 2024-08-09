@@ -8,13 +8,13 @@ I would like to avoid this.
 
 I would like to get a minipc, with low enough power draw to be comfortably ran off of a power bank for an extended time period. Like, around 24 hours would be optimal, but I would take 12. 
 
-The main thing people like for this is an n100. I am also somewhat interested in raspberry pi 5, or other, similar SBC. 
+The main thing people like for this is an n100. I am also somewhat interested in raspberry pi 5, or other, similar SBC. A laptop would also possibly work, and I have a number of those already. 
 
-Regardless, I would be using an nvme drive for storage.
+Regardless, I would be using an nvme drive or a SATA SSD. No hard drives, because that would be too much powerdraw.
 
 Here's what I would like to run:
 1. zapret ( dpi evasion )
 2. wifi hotspot routed through zapret
 3. my notes server ( I would update cloudflare to point to it instead of the normal server )
-4. my music server ( It would have all the music synced over already, and, I would, again, just update cloudflare to point to it instead of the normal server )
-5. my password manager  ( would be restored from a recent vault export )
+4. my music server ( It would have all the music synced over already ( via syncthing ), and, I would, again, just update cloudflare to point to it instead of the normal server )
+5. my password manager  ( would be restored from a recent vault export ) ( would require automated vault exports which I already have plans for but have yet to implement )

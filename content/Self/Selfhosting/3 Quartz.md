@@ -340,3 +340,7 @@ Exposing quartz to the internet SHOULD be done through something like caddy or n
 please know that npx quartz build --serve is NOT made for security, and there are likely absolute path related exploits that could allow for a person to read any file on your system with it.
 
 To get around this, I am hosting quartz in a VM, and that VM has no network access. I am exposing quartz with a cloudflare tunnel which runs on the outside system. If there was an exploit which allowed for anything bad to happen with quartz, i am hoping it would be isolated to only affecting the VM.
+
+
+# continued
+this setup had a lot of problems and I have addressed most if not all of them here [[Quartz]]

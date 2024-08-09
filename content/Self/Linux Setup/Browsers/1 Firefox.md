@@ -15,8 +15,6 @@ Here are my favorite addons:
 
 I'll get into them in a moment though, because though they are cool, they are not unique to firefox necessarily, most of those can be achieved on other browsers. Chrome's extensions can be installed on most major chromium based browsers.
 
-
-
 Firefox's focus on [[Free and Libre Open Source Software]] is nice, I like that im using an entirely free and libre browser, but mozilla is a company [primarily funded by google](https://www.techspot.com/news/101083-mozilla-raked-almost-600-million-2022-thanks-google.html) and gets to exist primarily so that google is not viewed as a monopoly. That does not inspire confidence. This means that them being open source is not my primary drive for using their browser, as I don't have a ton of faith in them as a company. I imagine it is hard to avoid the golden handcuffs there and I imagine they will do nothing major to fight google's [more malicious actions](https://arstechnica.com/gadgets/2023/07/googles-web-integrity-api-sounds-like-drm-for-the-web/) because of those golden handcuffs. Mozilla did [release a statement](https://github.com/mozilla/standards-positions/issues/852#issuecomment-1648820747) on that web integrity API ( as a comment in a github repo... ) , but did nothing more. 
 
 So if it isn't mozilla as a company, then why firefox specifically?

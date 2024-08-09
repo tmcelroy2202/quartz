@@ -1,7 +1,7 @@
 These devices are SUPER CHEAP (secondhand) enterprise grade access points. My goal is to use the 3 of them I got for a wifi roaming network around my house. 
 
 by super cheap I mean, you can get 1 for 12\$ and 5 for around 36\$.
-![[Pasted image 20240701202929.png]]
+![[images/Pasted image 20240701202929.png]]
 I find that to be absolutely absurd. 
 # disclaimer
 im not responsible for if you break your access point doing this. That should not happen, but it totally could, if you do something stupid. 
@@ -84,7 +84,7 @@ I go to the openwrt wiki page for the device
 https://openwrt.org/toh/extreme_networks/ws-ap3825i
 
 and i scroll down to installation
-![[Pasted image 20240701142049.png]]
+![[images/Pasted image 20240701142049.png]]
 
 i right click on the sysupgrade image link and i copy link. You should do this yourself because there may be a newer version available than the version at time of writing. 
 currently thats 
@@ -570,13 +570,13 @@ its an open network though, which isnt great. Let's fix that.
 on each access point, on luci, go to network -> wireless
 where you see your SSIDs, click Edit 
 
-![[Pasted image 20240701162124.png]]
+![[images/Pasted image 20240701162124.png]]
 
 under interface configuration go to the wireless security tab 
 
 set encryption to WPA2-PSK
 
-![[Pasted image 20240701162226.png]]
+![[images/Pasted image 20240701162226.png]]
 
 set Key to your password. Key just means password.  dont worry about any of the other options. Save. Do this on each SSID on each access point. 
 
